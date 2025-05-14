@@ -1,5 +1,6 @@
 import { lazy } from "react"
 import Layout from "@/components/layout"
+import { Navigate } from "react-router-dom"
 
 const Albums = lazy(() => import("@/pages/albums"))
 const AlbumsDetail = lazy(() => import("@/pages/albumDetail"))
@@ -12,8 +13,12 @@ export const routes = [
         element: <Layout />,
         children: [
             {
+                path: "/",
+                element: <Navigate to="/albums" replace />
+            },
+            {
                 path: "albums",
-                element: <Albums />
+                element: <Albums />,
             },
             {
                 path: "users",
@@ -21,11 +26,11 @@ export const routes = [
             },
             {
                 path: "users/:id",
-                element: < UserDetailPage />
+                element: <UserDetailPage />
             },
             {
                 path: "albums/:id",
-                element: < AlbumsDetail />
+                element: <AlbumsDetail />
             }
         ]
     }

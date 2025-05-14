@@ -38,7 +38,7 @@ export default function UserDetailPage() {
 
     return (
         <>
-            <div>
+           <div className="p-6">
                 <BreadcrumbWithCustomSeparator name="Users" Icon={<Users size={25} />} />
 
                 <div className="flex  items-center justify-start">

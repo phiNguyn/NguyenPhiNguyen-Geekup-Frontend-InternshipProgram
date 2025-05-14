@@ -59,6 +59,8 @@ export default function Albums() {
         <LoadingState />
       ) : (
         <>
+        <div className="p-6">
+
           <AlbumTable albums={albums} users={users} />
           <Pagination
             currentPage={currentPage}
@@ -66,7 +68,8 @@ export default function Albums() {
             onPageChange={handlePageChange}
             pageSize={pageSize}
             onPageSizeChange={handlePageSizeChange}
-          />
+            />
+            </div>
         </>
       )}
     </>
